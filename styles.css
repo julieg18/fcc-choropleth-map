@@ -6,3 +6,10 @@ small {
   font-size: initial;
 }
 
+#tooltip {
+  background-color: darkorchid;
+  position: absolute;
+  width: 150px;
+  height: 75px;
+  visibility: hidden;
+}
