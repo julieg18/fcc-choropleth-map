@@ -15,11 +15,11 @@ let path = d3.geoPath();
 let firstReq = new XMLHttpRequest();
 firstReq.open('GET', USCountyLink, true);
 firstReq.send();
-firstReq.onload = function() {
+firstReq.onload = function () {
   let secondReq = new XMLHttpRequest();
   secondReq.open('Get', USEducationLink, true);
   secondReq.send();
-  secondReq.onload = function() {
+  secondReq.onload = function () {
     const countyJSONdata = JSON.parse(firstReq.responseText);
     const educationJSONdata = JSON.parse(secondReq.responseText);
 
@@ -34,7 +34,7 @@ firstReq.onload = function() {
 
     let legendText = [];
     
-    function getLegendTextArray() {
+    function getLegendTextArray () {
       let minNum = parseFloat(d3.min(educationJSONdata, (d) => d["bachelorsOrHigher"]).toFixed(1));
       let maxNum = parseFloat(d3.max(educationJSONdata, (d) => d["bachelorsOrHigher"]).toFixed(1));
       let arrayNum = minNum;
@@ -47,8 +47,8 @@ firstReq.onload = function() {
     };
     getLegendTextArray();
 
-    function getEducationData(countyData, educationData) {
-      return educationJSONdata.filter(elem => elem.fips == countyData['id'])[0][educationData]
+    function getEducationData (countyData, educationData) {
+      return educationJSONdata.filter(elem => elem.fips === countyData['id'])[0][educationData]
     };
 
     svg.selectAll('path')
