@@ -4,7 +4,7 @@ const colors = ['#d497c1', '#bf6fac', '#a64395', '#94258c', '#7c2073', '#712065'
 
 const svg = d3.select('svg') 
   .attr('height', 615)
-  .attr('width', 950)
+  .attr('width', 950);
 
 const legend = svg.append('g')
   .attr('id', 'legend')
@@ -68,11 +68,11 @@ firstReq.onload = function() {
           .style('top', `${event.pageY - 30}px`)
           .style('background-color', colorScale(getEducationData(d, 'bachelorsOrHigher')))
           .attr('data-education', getEducationData(d, 'bachelorsOrHigher'))
-          .html(`${getEducationData(d, 'area_name')}, ${getEducationData(d, 'state')} ${getEducationData(d, 'bachelorsOrHigher')}%`)
+          .html(`${getEducationData(d, 'area_name')}, ${getEducationData(d, 'state')} ${getEducationData(d, 'bachelorsOrHigher')}%`);
       })
       .on("mouseout", (d, i) => {
         d3.select('#tooltip')
-          .style('visibility', 'hidden')
+          .style('visibility', 'hidden');
       });
 
     //legend
@@ -96,5 +96,5 @@ firstReq.onload = function() {
       .attr('x', (d, i) => i * 50 + 510)
       .attr('y', (d, i) => 45)
       .text((d, i) => d + '%');
-  }
-}
+  };
+};
