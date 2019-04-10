@@ -1,15 +1,31 @@
 body {
   text-align: center;
+  font-family: 'Lato', sans-serif;
+  background-color: #661d54;
+  color: white;
+}
+
+a {
+  color: white;
 }
 
 small {
   font-size: initial;
 }
 
+svg {
+  background-color: #fff;
+}
+
+svg text {
+  font-size: small;
+}
+
 #tooltip {
-  background-color: darkorchid;
   position: absolute;
   width: 150px;
-  height: 75px;
+  height: 40px;
   visibility: hidden;
+  color: #fff;
+  padding: 10px;
 }
